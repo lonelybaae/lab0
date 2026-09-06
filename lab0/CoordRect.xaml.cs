@@ -15,9 +15,7 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace lab0
 {
-    /// <summary>
-    /// Логика взаимодействия для CoordRect.xaml
-    /// </summary>
+    
     public partial class CoordRect : Window
     {
         MainWindow mw;

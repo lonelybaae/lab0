@@ -20,7 +20,7 @@ namespace lab0
         Triangle tr;
         Rectangle rt;
         CoordTr coordTr = new CoordTr();
-        CoordRect coordRect= new CoordRect();
+        CoordRect coordRect; // убрал преждевременную инициализацию
         Random rnd = new Random();
 
         int width;
@@ -105,9 +105,9 @@ namespace lab0
 
         private void createCoordRect(object sender, RoutedEventArgs e)
         {
+            // создаём окно ввода, передаём ссылку на MainWindow
+            coordRect = new CoordRect(this);
             coordRect.Show();
-
-
         }
     }
 }
