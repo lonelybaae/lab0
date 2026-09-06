@@ -105,7 +105,7 @@ namespace lab0
 
         private void createCoordRect(object sender, RoutedEventArgs e)
         {
-            // вот тут this
+            //вот тут this
             coordRect = new CoordRect(this);
             coordRect.Show();
         }
