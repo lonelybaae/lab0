@@ -105,7 +105,7 @@ namespace lab0
 
         private void createCoordRect(object sender, RoutedEventArgs e)
         {
-            // создаём окно ввода, передаём ссылку на MainWindow
+            // вот тут this
             coordRect = new CoordRect(this);
             coordRect.Show();
         }
