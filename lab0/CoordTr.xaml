@@ -30,6 +30,6 @@
         <TextBox Grid.Row="1" Grid.Column="2" Background="Pink" Name="Y1"></TextBox>
         <TextBox Grid.Row="2" Grid.Column="2" Background="Pink" Name="Y2"></TextBox>
         <TextBox Grid.Row="3" Grid.Column="2" Background="Pink" Name="Y3"></TextBox>
-        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">Создать</Button>
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Click="CreateTriangle">Создать</Button>
     </Grid>
 </Window>

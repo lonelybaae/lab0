@@ -19,8 +19,8 @@ namespace lab0
     {
         Triangle tr;
         Rectangle rt;
-        CoordTr coordTr = new CoordTr();
-        CoordRect coordRect; // убрал преждевременную инициализацию
+        CoordTr coordTr;
+        CoordRect coordRect;  
         Random rnd = new Random();
 
         int width;
@@ -100,6 +100,7 @@ namespace lab0
 
         private void createCoordTr(object sender, RoutedEventArgs e)
         {
+            coordTr = new CoordTr(this);
             coordTr.Show();
         }
 
