@@ -8,16 +8,25 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
-        <UniformGrid  VerticalAlignment="Top" Grid.Row="0">
+        <UniformGrid  VerticalAlignment="Top" Grid.Row="0" Rows="3">
             <Button Click="createTr">Случайный треугольник</Button>
             <Button Click="createRect">Случайный прямоугольник</Button>
             <Button Click="createCoordTr">Треугольник по координатам</Button>
             <Button Click="createCoordRect"> Прямоугольник по координатам</Button>
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center">Сдвинуть по X</TextBlock>
+                <Slider Name="SliderX" Minimum="-500" Maximum="500" Value="0" ValueChanged="SliderX_ValueChanged"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center">Сдвинуть по Y</TextBlock>
+                <Slider Name="SliderY" Minimum="-500" Maximum="500" Value="0" ValueChanged="SliderY_ValueChanged"/>
+            </StackPanel>
         </UniformGrid>
+        
         <Canvas x:Name="Scene" Grid.Row="1" Height="400" Width="800"/>
         <UniformGrid  Grid.Row="2">
             <Button Click="Clear">Очистка холста</Button>

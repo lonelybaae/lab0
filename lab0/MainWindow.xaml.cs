@@ -73,6 +73,7 @@ namespace lab0
 
         private void createRect(object sender, RoutedEventArgs e)
         {
+            ClearScene();
             width = rnd.Next(0, (int)Scene.Width);
             height = rnd.Next((int)Scene.Height);
             Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
@@ -80,22 +81,25 @@ namespace lab0
             Point2D p3 = new Point2D((p1.X + width), (p1.Y - height));
             Point2D p4 = new Point2D((p1.X), (p1.Y - height));
             rt = new Rectangle(p1, p2, p3, p4);
+            tr = null;
             DrawRectangle(rt);
-        }
-
-        private void createTr(object sender, RoutedEventArgs e)
-        {
-            //Создание треугольника со случайными координатами
-            Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            tr = new Triangle(p1, p2, p3);
-            DrawTriangle(tr);
         }
 
         private void Clear(object sender, RoutedEventArgs e)
         {
             ClearScene();
+        }
+
+        private void createTr(object sender, RoutedEventArgs e)
+        {
+            //Создание треугольника со случайными координатами
+            ClearScene();
+            Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            tr = new Triangle(p1, p2, p3);
+            rt = null;
+            DrawTriangle(tr);
         }
 
         private void createCoordTr(object sender, RoutedEventArgs e)
@@ -109,6 +113,49 @@ namespace lab0
             //вот тут this
             coordRect = new CoordRect(this);
             coordRect.Show();
+        }
+
+        private double previousX = 0;
+        private double previousY = 0;
+
+        private void SliderX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int dx = (int)(e.NewValue - previousX);
+
+            if (tr != null)
+            {
+                tr.AddX(dx);
+                ClearScene();
+                DrawTriangle(tr);
+            } 
+            else if (rt != null)
+            {
+                rt.AddX(dx);
+                ClearScene();
+                DrawRectangle(rt);
+            }
+
+            previousX = e.NewValue;
+        }
+
+        private void SliderY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int dy = (int)(e.NewValue - previousY);
+
+            if (tr != null)
+            {
+                tr.AddY(dy);
+                ClearScene();
+                DrawTriangle(tr);
+            }
+            else if (rt != null)
+            {
+                rt.AddY(dy);
+                ClearScene();
+                DrawRectangle(rt);
+            }
+
+            previousY = e.NewValue;
         }
     }
 }

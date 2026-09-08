@@ -29,6 +29,7 @@ namespace lab0
             mw = mainWindow;
         }
 
+
         public void CreateRectangle(object sender, RoutedEventArgs e)
         {
             width = Convert.ToInt32(Width.Text);
