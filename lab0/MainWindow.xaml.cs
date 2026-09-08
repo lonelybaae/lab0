@@ -64,10 +64,41 @@ namespace lab0
             DrawLine(rt.P3, rt.P4);
             DrawLine(rt.P4, rt.P1);
         }
+        public void CreateTriangleByCoordinates(
+    int x1, int y1,
+    int x2, int y2,
+    int x3, int y3)
+        {
+            Point2D p1 = new Point2D(x1, y1);
+            Point2D p2 = new Point2D(x2, y2);
+            Point2D p3 = new Point2D(x3, y3);
+            tr = new Triangle(p1, p2, p3);
+            previousX = SliderX.Value;
+            previousY = SliderY.Value;
+            ClearScene();
+            DrawTriangle(tr);
+        }
+
+        public void CreateRectangleByCoordinates(
+            int x,
+            int y,
+            int width,
+            int height)
+        {
+            Point2D p1 = new Point2D(x, y);
+            Point2D p2 = new Point2D(x + width,y);
+            Point2D p3 = new Point2D(x + width,y - height);
+            Point2D p4 = new Point2D(x,y - height);
+            rt = new Rectangle(p1, p2, p3, p4);
+            previousX = SliderX.Value;
+            previousY = SliderY.Value;
+            ClearScene();
+            DrawRectangle(rt);
+        }
+
 
         public void ClearScene()
         {
-            //Очистка Canvas от всех объектов
             Scene.Children.Clear();
         }
 
@@ -156,6 +187,8 @@ namespace lab0
             }
 
             previousY = e.NewValue;
+
+
         }
     }
 }
