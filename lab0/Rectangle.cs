@@ -13,6 +13,7 @@ namespace lab0
         public Point2D P2 { get; private set; }
         public Point2D P3 { get; private set; }
         public Point2D P4 { get; private set; }
+
         //Конструктор класса
         public Rectangle(Point2D p1, Point2D p2, Point2D p3, Point2D p4)
         {

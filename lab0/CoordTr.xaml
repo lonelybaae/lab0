@@ -1,0 +1,35 @@
+﻿<Window x:Class="lab0.CoordTr"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab0"
+        mc:Ignorable="d"
+        Title="CoordTr" Height="200" Width="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">x</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">y</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0">Точка 1</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0">Точка 2</TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0">Точка 3</TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="1" Background="Pink" Name="X1"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="1" Background="Pink" Name="X2"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="1" Background="Pink" Name="X3"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="2" Background="Pink" Name="Y1"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="2" Background="Pink" Name="Y2"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="2" Background="Pink" Name="Y3"></TextBox>
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Click="CreateTriangle">Создать</Button>
+    </Grid>
+</Window>
